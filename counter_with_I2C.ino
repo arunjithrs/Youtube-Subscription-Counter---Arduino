@@ -25,9 +25,12 @@ String payload = "";
 void setup() {
   Serial.begin(115200);
   
-  //lcd.begin(16, 2);  
+  lcd.begin(16,2); 
+  lcd.backlight();
+  
   Wire.begin(D2, D1);
-  lcd.begin();
+  //lcd.begin();
+  lcd.home (); 
   
   WiFi.begin(ssid,password);
 
@@ -140,7 +143,7 @@ void loop() {
           lcd.clear();
           lcd.setCursor(5, 1);
           lcd.print("Subs: ");
-          lcd.setCursor(12, 1);
+          lcd.setCursor(11, 1);
           lcd.print(payload);
      
         }
